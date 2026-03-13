@@ -1,0 +1,27 @@
+ARQUIVO PREPARADO PARA SUBIR PELO CELULAR NO GITHUB
+
+1) Envie TODOS os arquivos da raiz deste ZIP para a raiz do repositório:
+   index.html, checkout.html, _redirects, HURA_SETUP.txt, CREATE_PIX_CODE.txt
+   e todos os .css, .js, .jpg, .ttf, .woff2
+
+2) Depois, no GitHub, crie UM arquivo novo com este nome exato:
+   netlify/functions/create-pix.js
+
+3) Abra o arquivo CREATE_PIX_CODE.txt deste ZIP, copie todo o conteúdo,
+   e cole dentro do arquivo netlify/functions/create-pix.js
+
+4) No Netlify, deixe:
+   Build command: vazio
+   Publish directory: .
+
+5) Variáveis no Netlify:
+   HURA_SECRET_KEY
+   HURA_PUBLIC_KEY
+   HURA_COMPANY_ID
+
+6) Depois faça Deploy site de novo.
+
+Observação:
+- Neste ZIP, os arquivos estáticos já foram achatados para a raiz.
+- Assim o layout funciona mesmo se o GitHub mobile só deixar subir arquivos soltos.
+- A única pasta que ainda precisa existir é netlify/functions para a API PIX.

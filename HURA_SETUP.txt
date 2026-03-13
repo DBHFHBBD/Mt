@@ -1,0 +1,8 @@
+1. Faça deploy deste ZIP no Netlify.
+2. No Netlify > Site configuration > Environment variables, configure:
+   HURA_API_USER
+   HURA_API_PASSWORD
+3. O CTA principal da LP abre checkout.html.
+4. O checkout salva os dados no localStorage e chama /.netlify/functions/create-pix.
+
+Observação: a documentação pública da Hura mostra o endpoint POST /v1/payment-transaction/create com autenticação Basic. Como a página pública não expõe claramente todo o body na própria página aberta, o payload foi montado em best effort e pode precisar de pequeno ajuste em netlify/functions/create-pix.js dependendo da sua conta.

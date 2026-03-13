@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Checkout Seguro | FutureKids</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="checkout.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="checkout-shell">
+    <aside class="checkout-brand">
+      <div class="brand-badge">Pagamento protegido</div>
+      <h1>Finalize seu pedido com segurança</h1>
+      <p class="brand-copy">Preencha seus dados, confirme o endereço de entrega e gere seu PIX em poucos segundos.</p>
+
+      <div class="mini-product">
+        <img src="tsL9ndH.jpg" alt="Livro Infantil Bilíngue Interativo">
+        <div>
+          <strong>Livro Infantil Bilíngue Interativo</strong>
+          <span>Som em português e inglês</span>
+          <span>Frete grátis Brasil</span>
+        </div>
+      </div>
+
+      <div class="trust-list">
+        <div><span>🔒</span> Ambiente seguro com geração instantânea de PIX</div>
+        <div><span>📦</span> Endereço salvo neste dispositivo para agilizar o pedido</div>
+        <div><span>🚚</span> Entrega para todo o Brasil com frete grátis</div>
+      </div>
+
+      <a href="index.html#comprar" class="back-link">← Voltar para a oferta</a>
+    </aside>
+
+    <main class="checkout-card">
+      <div class="checkout-header">
+        <div>
+          <p class="eyebrow">Checkout seguro</p>
+          <h2>Informações do comprador</h2>
+        </div>
+        <div class="secure-pill">Ambiente criptografado</div>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <section class="section-card">
+          <div class="section-title-wrap">
+            <p class="eyebrow">Contato</p>
+            <h3>Quem vai receber o pedido</h3>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>Nome completo</span>
+              <input type="text" id="name" required placeholder="Seu nome completo">
+            </label>
+            <label>
+              <span>CPF</span>
+              <input type="text" id="document" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00">
+            </label>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>E-mail</span>
+              <input type="email" id="email" required placeholder="voce@email.com">
+            </label>
+            <label>
+              <span>Telefone / WhatsApp</span>
+              <input type="tel" id="phone" required inputmode="tel" placeholder="(00) 00000-0000">
+            </label>
+          </div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-title-wrap">
+            <p class="eyebrow">Entrega</p>
+            <h3>Endereço de entrega</h3>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>CEP</span>
+              <input type="text" id="zipcode" required inputmode="numeric" maxlength="9" placeholder="00000-000">
+              <small id="zipcode-help" class="field-help">Digite o CEP para preencher o endereço.</small>
+            </label>
+            <label>
+              <span>Estado</span>
+              <input type="text" id="state" required maxlength="2" placeholder="UF">
+            </label>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>Rua / Logradouro</span>
+              <input type="text" id="street" required placeholder="Rua, Avenida, Travessa...">
+            </label>
+            <label>
+              <span>Número</span>
+              <input type="text" id="number" required placeholder="123">
+            </label>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>Bairro</span>
+              <input type="text" id="neighborhood" required placeholder="Seu bairro">
+            </label>
+            <label>
+              <span>Cidade</span>
+              <input type="text" id="city" required placeholder="Sua cidade">
+            </label>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>Complemento</span>
+              <input type="text" id="complement" placeholder="Apartamento, bloco, referência...">
+            </label>
+            <label>
+              <span>Cor escolhida</span>
+              <select id="color" required>
+                <option value="">Selecione</option>
+                <option value="Azul">Azul</option>
+                <option value="Rosa">Rosa</option>
+                <option value="Amarelo">Amarelo</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="order-box">
+          <div class="order-head">
+            <div>
+              <p class="eyebrow">Seu pedido</p>
+              <h3>Livro Infantil Bilíngue Interativo</h3>
+            </div>
+            <span class="shipping-tag">Frete grátis</span>
+          </div>
+
+          <div class="product-line">
+            <img src="tsL9ndH.jpg" alt="Livro Infantil Bilíngue Interativo">
+            <div>
+              <strong>Livro com áudio interativo</strong>
+              <p>Cor: <span id="product-color-preview">—</span></p>
+            </div>
+          </div>
+
+          <div class="qty-row">
+            <div>
+              <p class="qty-label">Quantidade</p>
+              <div class="qty-control">
+                <button type="button" class="qty-btn" data-action="minus">−</button>
+                <input id="quantity" type="number" min="1" max="10" value="1">
+                <button type="button" class="qty-btn" data-action="plus">+</button>
+              </div>
+            </div>
+            <div class="unit-price-box">
+              <span>Valor unitário</span>
+              <strong id="unit-price">R$ 49,90</strong>
+            </div>
+          </div>
+
+          <div class="summary-list">
+            <div><span>Preço unitário</span><strong id="unit-price-inline">R$ 49,90</strong></div>
+            <div><span>Quantidade</span><strong id="quantity-inline">1</strong></div>
+            <div><span>Frete</span><strong>Grátis</strong></div>
+            <div class="summary-total"><span>Total</span><strong id="total">R$ 49,90</strong></div>
+          </div>
+        </section>
+
+        <div class="submit-wrap">
+          <button type="submit" class="generate-btn" id="generate-btn">Gerar PIX agora</button>
+          <p class="microcopy">Ao continuar, seus dados ficam salvos neste dispositivo para você não precisar preencher tudo novamente.</p>
+          <div class="inline-error hidden" id="form-error"></div>
+        </div>
+      </form>
+
+      <section class="pix-panel hidden" id="pix-panel">
+        <div class="pix-header">
+          <div>
+            <p class="eyebrow">PIX gerado</p>
+            <h3>Escaneie ou copie o código</h3>
+          </div>
+          <span class="status-badge">Aguardando pagamento</span>
+        </div>
+        <div class="pix-grid">
+          <div class="qr-wrap"><canvas id="qr-canvas"></canvas></div>
+          <div class="pix-info">
+            <label>
+              <span>Copia e cola PIX</span>
+              <textarea id="pix-code" readonly></textarea>
+            </label>
+            <div class="action-row">
+              <button type="button" class="secondary-btn" id="copy-pix">Copiar código</button>
+            </div>
+            <div class="transaction-meta" id="transaction-meta"></div>
+          </div>
+        </div>
+      </section>
+
+      <p class="api-note">Verifique no Netlify: 1) variáveis HURA_SECRET_KEY, HURA_PUBLIC_KEY e HURA_COMPANY_ID; 2) novo deploy após salvar; 3) regra de redirect para /.netlify/functions/* antes do redirect do site.</p>
+    </main>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
